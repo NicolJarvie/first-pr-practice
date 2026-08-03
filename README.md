@@ -4,7 +4,7 @@ A tiny sandbox repo for practicing the GitHub pull request workflow.
 
 ## What is this?
 
-This repo exists so you can open a pull request, get it reviewd, and merge it
+This repo exists so you can open a pull request, get it reviewed, and merge it
 with zero risk to anything real.
 
 ## Usage
