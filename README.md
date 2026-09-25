@@ -99,8 +99,8 @@ Placeholders are marked `PLACEHOLDER` (visible on the page) or
 - [x] **Runic Raid key art:** `assets/img/runic-raid-key-art.jpg`
 - [x] **Social share images:** `og-jar-of-life.jpg`, `og-runic-raid.jpg`
 - [x] **Story comic:** `assets/img/runic-raid-story.jpg` (from the in-game lore page)
-- [ ] **Runic Raid screenshots:** 3 work-in-progress shots added (`runic-raid-shot-1..3.jpg`);
-      need a 4th (mini-game or boss fight) and final versions before launch
+- [ ] **Runic Raid screenshots:** 4 work-in-progress shots added (`runic-raid-shot-1..4.jpg`);
+      replace with final versions before launch
 - [ ] **Copy review:** Runic Raid pitch and feature cards, about text
 - [ ] **Privacy policy:** check it against the final build (especially if
       analytics/Firebase are added), confirm the age rating, and set the date
