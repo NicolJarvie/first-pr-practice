@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Public site files/folders. Anything not listed here is never uploaded.
-PUBLISH = ["index.html", "games", "css", "assets"]
+PUBLISH = ["index.html", "privacy.html", "app-ads.txt", "games", "css", "assets"]
 
 REQUIRED = ["FTP_HOST", "FTP_USER", "FTP_PASSWORD", "FTP_PORT"]
 EXAMPLE_VALUES = {"your-ftp-username", "your-ftp-password"}
