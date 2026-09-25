@@ -86,6 +86,8 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 ## Email
 
 - `support@thejaroflife.com` is public and linked on the site.
+- A daily "urgent issues only" check of `support@` is planned for once the
+  mailboxes are live. See `docs/EMAIL_MONITORING.md`.
 - `admin@thejaroflife.com` is for accounts and registrations only. It's
   intentionally not shown on the site, to keep it away from spam scrapers.
 
