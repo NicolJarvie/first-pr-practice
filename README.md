@@ -98,7 +98,9 @@ Placeholders are marked `PLACEHOLDER` (visible on the page) or
       `jar-of-life-icon.png` is cropped from it. A simpler, purpose-made icon would read better at small sizes.
 - [x] **Runic Raid key art:** `assets/img/runic-raid-key-art.jpg`
 - [x] **Social share images:** `og-jar-of-life.jpg`, `og-runic-raid.jpg`
-- [ ] **Runic Raid screenshots:** 4 portrait phone screenshots
+- [x] **Story comic:** `assets/img/runic-raid-story.jpg` (from the in-game lore page)
+- [ ] **Runic Raid screenshots:** 3 work-in-progress shots added (`runic-raid-shot-1..3.jpg`);
+      need a 4th (mini-game or boss fight) and final versions before launch
 - [ ] **Copy review:** Runic Raid pitch and feature cards, about text
 - [ ] **Privacy policy:** check it against the final build (especially if
       analytics/Firebase are added), confirm the age rating, and set the date

@@ -205,7 +205,12 @@ h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
   font-weight: 600;
   padding: 16px;
 }
-.placeholder.portrait { aspect-ratio: 9 / 16; }
+.placeholder.portrait { aspect-ratio: 540 / 1170; }
+.screenshot {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
 
 /* ---------- Cards ---------- */
 .card-grid {
