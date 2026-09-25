@@ -10,7 +10,7 @@ step, no framework, no backend, no database.
 index.html              Homepage: hero, featured game, fair play, about, contact
 privacy.html            Privacy policy (needed for the Play Store listing)
 app-ads.txt             AdMob authorised-seller file (needs your publisher ID)
-games/rune-raid.html    Rune Raid: Viking Saga game page
+games/runic-raid.html    Runic Raid: Viking Saga game page
 css/styles.css          Shared styles for every page
 assets/img/             Images (logo, cover art, screenshots)
 scripts/deploy.py       Uploads the site to Fasthosts over FTP(S)
@@ -96,10 +96,10 @@ Placeholders are marked `PLACEHOLDER` (visible on the page) or
 
 - [x] **Studio logo:** `assets/img/jar-of-life-logo.jpg`. The header/favicon icon
       `jar-of-life-icon.png` is cropped from it. A simpler, purpose-made icon would read better at small sizes.
-- [x] **Rune Raid key art:** `assets/img/rune-raid-key-art.jpg`
-- [x] **Social share images:** `og-jar-of-life.jpg`, `og-rune-raid.jpg`
-- [ ] **Rune Raid screenshots:** 4 portrait phone screenshots
-- [ ] **Copy review:** Rune Raid pitch and feature cards, about text
+- [x] **Runic Raid key art:** `assets/img/runic-raid-key-art.jpg`
+- [x] **Social share images:** `og-jar-of-life.jpg`, `og-runic-raid.jpg`
+- [ ] **Runic Raid screenshots:** 4 portrait phone screenshots
+- [ ] **Copy review:** Runic Raid pitch and feature cards, about text
 - [ ] **Privacy policy:** check it against the final build (especially if
       analytics/Firebase are added), confirm the age rating, and set the date
 - [ ] **app-ads.txt:** add your AdMob publisher ID
