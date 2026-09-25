@@ -1,0 +1,6 @@
+# app-ads.txt for thejaroflife.com
+# AdMob checks this file to confirm which ad accounts may sell ads in our apps.
+#
+# TODO before launch: replace pub-XXXXXXXXXXXXXXXX with your AdMob publisher ID
+# (AdMob console → Settings → Account information), then remove the # from the line below.
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

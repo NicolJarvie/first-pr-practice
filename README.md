@@ -8,14 +8,16 @@ step, no framework, no backend, no database.
 
 ```
 index.html              Homepage: hero, featured game, fair play, about, contact
-games/rune-raid.html    Rune Raid game page
+privacy.html            Privacy policy (needed for the Play Store listing)
+app-ads.txt             AdMob authorised-seller file (needs your publisher ID)
+games/runic-raid.html    Runic Raid: Viking Saga game page
 css/styles.css          Shared styles for every page
 assets/img/             Images (logo, cover art, screenshots)
 scripts/deploy.py       Uploads the site to Fasthosts over FTP(S)
 .env.example            Shape of the FTP credentials (copy to .env)
 ```
 
-Only `index.html`, `games/`, `css/` and `assets/` are uploaded when deploying.
+Only `index.html`, `privacy.html`, `app-ads.txt`, `games/`, `css/` and `assets/` are uploaded when deploying.
 Everything else (README, scripts, `.env`, git files) stays on your machine.
 
 ### Why styles live in `css/styles.css`
@@ -84,6 +86,8 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 ## Email
 
 - `support@thejaroflife.com` is public and linked on the site.
+- A daily "urgent issues only" check of `support@` is planned for once the
+  mailboxes are live. See `docs/EMAIL_MONITORING.md`.
 - `admin@thejaroflife.com` is for accounts and registrations only. It's
   intentionally not shown on the site, to keep it away from spam scrapers.
 
@@ -92,13 +96,15 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 Placeholders are marked `PLACEHOLDER` (visible on the page) or
 `DRAFT COPY` / `TODO` (HTML comments). Search the files for those words to find them.
 
-- [ ] **Logo.** SVG preferred, otherwise a transparent PNG of at least 512×512.
-      It replaces `assets/img/logo-placeholder.svg`, which is also used as the favicon.
-- [ ] **Rune Raid cover art.** Landscape, around 1600×1000. It's used on the
-      homepage and the game page.
-- [ ] **Social share image.** 1200×630, for `og:image` link previews. This can be
-      a crop of the cover art.
-- [ ] **Rune Raid screenshots.** Four portrait phone screenshots.
-- [ ] **Copy review:** hero tagline, Rune Raid pitch and feature cards, fair
-      play points, about text. All of it is draft.
-- [ ] **Launch details:** platforms, release date, App Store / Google Play URLs.
+- [x] **Studio logo:** `assets/img/jar-of-life-logo.jpg`. The header/favicon icon
+      `jar-of-life-icon.png` is cropped from it. A simpler, purpose-made icon would read better at small sizes.
+- [x] **Runic Raid key art:** `assets/img/runic-raid-key-art.jpg`
+- [x] **Social share images:** `og-jar-of-life.jpg`, `og-runic-raid.jpg`
+- [x] **Story comic:** `assets/img/runic-raid-story.jpg` (from the in-game lore page)
+- [ ] **Runic Raid screenshots:** 4 work-in-progress shots added (`runic-raid-shot-1..4.jpg`);
+      replace with final versions before launch
+- [ ] **Copy review:** Runic Raid pitch and feature cards, about text
+- [ ] **Privacy policy:** check it against the final build (especially if
+      analytics/Firebase are added), confirm the age rating, and set the date
+- [ ] **app-ads.txt:** add your AdMob publisher ID
+- [ ] **Launch details:** Google Play URL and badge; add iOS if one is planned
