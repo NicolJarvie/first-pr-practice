@@ -7,7 +7,7 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
   Fasthosts automatically). Never merge into `main` without the steps below.
 - The only command that publishes is: **"Publish live website"**.
   Words like "merge", "go", "ship it" or "looks good" are NOT approval to publish.
-  If Nicol says something like that, ask whether he means "Publish live website".
+  If Nicol says something like that, ask whether they mean "Publish live website".
 - When Nicol says "Publish live website", first reply with exactly:
   **"Are you sure? This will update the LIVE website."**
   plus a one-line summary of what will change. Only merge after they answer yes.
@@ -15,7 +15,7 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
   untouched until it's published.
 
 ## Drafts and previews
-- For every draft, send Nicol a preview he can view in the Claude mobile app:
+- For every draft, send Nicol a preview they can view in the Claude mobile app:
   the rendered page(s) plus screenshots at phone (375px) and desktop (1280px)
   widths. They review and ask for tweaks before publishing.
 
