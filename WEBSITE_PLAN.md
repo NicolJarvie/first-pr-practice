@@ -56,7 +56,7 @@ Done: studio logo + header icon, Runic Raid key art (portrait), story comic, soc
 
 Still to do:
 - Runic Raid cover art: landscape ~1600×1000 (optional — the site uses the portrait key art for now)
-- Simpler purpose-made header/tab icon (optional — the current one is cropped from the studio logo)
+- ~~Simpler purpose-made header/tab icon~~ **Tab icon DONE 1 Oct 2026** (gold jar, `jar-of-life-favicon-32/192.png`, live). Decided: the phone home-screen icon and the 40px header logo keep the logo crop `jar-of-life-icon.png` — leave as is.
 - Final Runic Raid phone screenshots to replace the 4 work-in-progress ones
 - Copy review: hero tagline, Runic Raid pitch, feature cards, fair play points, about text — all draft
 - Privacy policy: set the date, confirm the age rating, update if analytics (e.g. Firebase) are added
