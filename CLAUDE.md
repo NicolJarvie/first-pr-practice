@@ -10,14 +10,14 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
   If Nicol says something like that, ask whether he means "Publish live website".
 - When Nicol says "Publish live website", first reply with exactly:
   **"Are you sure? This will update the LIVE website."**
-  plus a one-line summary of what will change. Only merge after he answers yes.
+  plus a one-line summary of what will change. Only merge after they answer yes.
 - Every change starts as a draft on a branch / pull request. The live site is
   untouched until it's published.
 
 ## Drafts and previews
 - For every draft, send Nicol a preview he can view in the Claude mobile app:
   the rendered page(s) plus screenshots at phone (375px) and desktop (1280px)
-  widths. He reviews and asks for tweaks before publishing.
+  widths. They review and ask for tweaks before publishing.
 
 ## Other standing rules
 - Website only: never change the game repo (`NicolJarvie/RuneRaid`).
