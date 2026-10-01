@@ -86,7 +86,8 @@ python scripts/deploy.py --coming-soon --dry-run
 python scripts/deploy.py --coming-soon
 ```
 
-It shows the studio logo, a short teaser and the support email. It doesn't
+It shows the studio logo, a short teaser, the support email and a privacy
+policy page (`coming-soon/privacy.html`, which says "our games"). It doesn't
 name the game. Running the normal `python scripts/deploy.py` later replaces it
 with the full site.
 

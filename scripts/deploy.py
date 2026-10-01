@@ -29,6 +29,7 @@ PUBLISH = ["index.html", "privacy.html", "app-ads.txt", "robots.txt", "sitemap.x
 # site later overwrites index.html and sitemap.xml with the real versions.
 COMING_SOON = [
     ("coming-soon/index.html", "index.html"),
+    ("coming-soon/privacy.html", "privacy.html"),
     ("coming-soon/sitemap.xml", "sitemap.xml"),
     ("robots.txt", "robots.txt"),
     ("app-ads.txt", "app-ads.txt"),

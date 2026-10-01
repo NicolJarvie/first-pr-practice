@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — The Jar of Life</title>
+  <meta name="description" content="Privacy policy for The Jar of Life games and website.">
+  <link rel="canonical" href="https://thejaroflife.com/privacy.html">
+  <link rel="icon" href="assets/img/jar-of-life-icon.png" type="image/png">
+
+  <!-- Pre-launch version of privacy.html: same policy, no game named, styled to
+       match the coming-soon page. Deployed with: python scripts/deploy.py --coming-soon
+       DRAFT: check against the final game build before launch, especially if
+       analytics (e.g. Firebase) are added, and confirm the age rating. -->
+  <style>
+    :root {
+      --bg: #12101a;
+      --text: #ece8f4;
+      --muted: #a9a2bb;
+      --accent: #f2b544;
+      --accent-2: #7fd1b9;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(242, 181, 68, 0.14), transparent 45%),
+        radial-gradient(circle at 80% 85%, rgba(127, 209, 185, 0.12), transparent 45%),
+        var(--bg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-2); }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 0;
+    }
+    header a { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; }
+    header img { width: 40px; height: 40px; border-radius: 10px; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 6vw, 2.4rem); line-height: 1.15; }
+    h2 { margin: 36px 0 8px; font-size: 1.3rem; }
+    p, li { color: var(--muted); }
+    footer { padding: 24px 16px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="assets/img/jar-of-life-icon.png" alt="" width="40" height="40">
+      <span>The Jar of Life</span>
+    </a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy policy</h1>
+    <p>Last updated: 1 October 2026</p>
+
+    <p>This policy covers the mobile games published by The Jar of Life and this website.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>No accounts and no sign-up. We don't ask for your name, email or any other personal details inside our games.</li>
+      <li>No in-app purchases, so we never handle payment details.</li>
+      <li>Your game progress is saved on your device.</li>
+      <li>Our games show optional rewarded ads through Google AdMob. Google may collect some device data to serve those ads. Details are below.</li>
+    </ul>
+
+    <h2>Advertising (Google AdMob)</h2>
+    <p>
+      Our games show an ad only when you choose to watch one for an in-game reward.
+      There are no banners and no forced ads. Ads are provided by Google AdMob.
+      To show ads and measure how they perform, Google may collect and use information
+      such as your device's advertising ID, IP address, device model and operating
+      system, and how you interact with the ad.
+    </p>
+    <p>
+      How Google uses this information is described in
+      <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>
+      and in <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+    </p>
+    <p>
+      You can reset your advertising ID or opt out of personalised ads in your
+      device's settings (on Android: Settings → Google → Ads, or Settings → Privacy → Ads,
+      depending on your device).
+    </p>
+
+    <h2>Data we collect ourselves</h2>
+    <p>
+      We don't collect personal information through our games. If you email us, we use
+      your email address and message only to reply to you, and we don't share them.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Our games are not directed at children under 13. If you believe a child has sent us
+      personal information, contact us and we will delete it.
+    </p>
+
+    <h2>This website</h2>
+    <p>
+      This website does not use cookies, analytics or tracking. Our hosting and network
+      providers may keep standard server logs (such as IP addresses) for security and reliability.
+    </p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we'll update this page and the date at the top.</p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about privacy? Email
+      <a href="mailto:support@thejaroflife.com">support@thejaroflife.com</a>.
+    </p>
+  </main>
+
+  <footer>&copy; <span id="year">2026</span> The Jar of Life</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
