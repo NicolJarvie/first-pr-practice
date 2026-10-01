@@ -8,14 +8,18 @@ step, no framework, no backend, no database.
 
 ```
 index.html              Homepage: hero, featured game, fair play, about, contact
-games/rune-raid.html    Rune Raid game page
+privacy.html            Privacy policy (needed for the Play Store listing)
+app-ads.txt             AdMob authorised-seller file (needs your publisher ID)
+robots.txt, sitemap.xml For search engines (submit the sitemap in Google Search Console)
+games/runic-raid.html    Runic Raid: Viking Saga game page
 css/styles.css          Shared styles for every page
 assets/img/             Images (logo, cover art, screenshots)
 scripts/deploy.py       Uploads the site to Fasthosts over FTP(S)
+coming-soon/            Pre-launch placeholder page (deploy with --coming-soon)
 .env.example            Shape of the FTP credentials (copy to .env)
 ```
 
-Only `index.html`, `games/`, `css/` and `assets/` are uploaded when deploying.
+Only `index.html`, `privacy.html`, `app-ads.txt`, `robots.txt`, `sitemap.xml`, `games/`, `css/` and `assets/` are uploaded when deploying.
 Everything else (README, scripts, `.env`, git files) stays on your machine.
 
 ### Why styles live in `css/styles.css`
@@ -72,6 +76,21 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 
 `.env` is git-ignored and must never be committed.
 
+### Pre-launch placeholder (optional)
+
+To get the domain live and indexed before launch without showing the
+unfinished site, deploy only the "coming soon" page:
+
+```
+python scripts/deploy.py --coming-soon --dry-run
+python scripts/deploy.py --coming-soon
+```
+
+It shows the studio logo, a short teaser, the support email and a privacy
+policy page (`coming-soon/privacy.html`, which says "our games"). It doesn't
+name the game. Running the normal `python scripts/deploy.py` later replaces it
+with the full site.
+
 ### Why Python for the deploy script
 
 - **Python (chosen):** `ftplib` is built in, with FTPS (encrypted) support.
@@ -84,6 +103,8 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 ## Email
 
 - `support@thejaroflife.com` is public and linked on the site.
+- A daily "urgent issues only" check of `support@` is planned for once the
+  mailboxes are live. See `docs/EMAIL_MONITORING.md`.
 - `admin@thejaroflife.com` is for accounts and registrations only. It's
   intentionally not shown on the site, to keep it away from spam scrapers.
 
@@ -92,13 +113,16 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 Placeholders are marked `PLACEHOLDER` (visible on the page) or
 `DRAFT COPY` / `TODO` (HTML comments). Search the files for those words to find them.
 
-- [ ] **Logo.** SVG preferred, otherwise a transparent PNG of at least 512×512.
-      It replaces `assets/img/logo-placeholder.svg`, which is also used as the favicon.
-- [ ] **Rune Raid cover art.** Landscape, around 1600×1000. It's used on the
-      homepage and the game page.
-- [ ] **Social share image.** 1200×630, for `og:image` link previews. This can be
-      a crop of the cover art.
-- [ ] **Rune Raid screenshots.** Four portrait phone screenshots.
-- [ ] **Copy review:** hero tagline, Rune Raid pitch and feature cards, fair
-      play points, about text. All of it is draft.
-- [ ] **Launch details:** platforms, release date, App Store / Google Play URLs.
+- [x] **Studio logo:** `assets/img/jar-of-life-logo.jpg`. The header/favicon icon
+      `jar-of-life-icon.png` is cropped from it. A simpler, purpose-made icon would read better at small sizes.
+- [x] **Runic Raid key art:** `assets/img/runic-raid-key-art.jpg`
+- [x] **Social share images:** `og-jar-of-life.jpg`, `og-runic-raid.jpg`
+- [x] **Story comic:** `assets/img/runic-raid-story.jpg` (from the in-game lore page)
+- [ ] **Runic Raid screenshots:** 4 work-in-progress shots added (`runic-raid-shot-1..4.jpg`);
+      replace with final versions before launch
+- [ ] **Copy review:** Runic Raid pitch and feature cards, about text
+- [ ] **Privacy policy:** check it against the final build (especially if
+      analytics/Firebase are added), confirm the age rating, and set the date
+- [ ] **app-ads.txt:** add your AdMob publisher ID
+- [x] **robots.txt + sitemap.xml:** submit `https://thejaroflife.com/sitemap.xml` in Google Search Console once live
+- [ ] **Launch details:** Google Play URL and badge; add iOS if one is planned

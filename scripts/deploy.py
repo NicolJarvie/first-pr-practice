@@ -6,6 +6,8 @@ Standard library only — no pip install needed.
 Usage (from the project root):
     python scripts/deploy.py --dry-run   # list what would be uploaded, no connection
     python scripts/deploy.py             # upload for real
+    python scripts/deploy.py --coming-soon [--dry-run]
+                                         # pre-launch placeholder page only
 
 Reads FTP settings from .env in the project root (see .env.example).
 Only the public site files below are uploaded; .env, README, scripts and
@@ -21,7 +23,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Public site files/folders. Anything not listed here is never uploaded.
-PUBLISH = ["index.html", "games", "css", "assets"]
+PUBLISH = ["index.html", "privacy.html", "app-ads.txt", "robots.txt", "sitemap.xml", "games", "css", "assets"]
+
+# Pre-launch placeholder: (local file, path on the server). Deploying the full
+# site later overwrites index.html and sitemap.xml with the real versions.
+COMING_SOON = [
+    ("coming-soon/index.html", "index.html"),
+    ("coming-soon/privacy.html", "privacy.html"),
+    ("coming-soon/sitemap.xml", "sitemap.xml"),
+    ("robots.txt", "robots.txt"),
+    ("app-ads.txt", "app-ads.txt"),
+    ("assets/img/jar-of-life-logo.jpg", "assets/img/jar-of-life-logo.jpg"),
+    ("assets/img/jar-of-life-icon.png", "assets/img/jar-of-life-icon.png"),
+    ("assets/img/og-jar-of-life.jpg", "assets/img/og-jar-of-life.jpg"),
+]
 
 REQUIRED = ["FTP_HOST", "FTP_USER", "FTP_PASSWORD", "FTP_PORT"]
 EXAMPLE_VALUES = {"your-ftp-username", "your-ftp-password"}
@@ -46,8 +61,10 @@ def load_env(path):
     return env
 
 
-def collect_files():
+def collect_files(coming_soon=False):
     """Return (local_path, remote_relative_path) for every file to publish."""
+    if coming_soon:
+        return [(ROOT / local, remote) for local, remote in COMING_SOON]
     files = []
     for entry in PUBLISH:
         path = ROOT / entry
@@ -77,9 +94,13 @@ def ensure_remote_dir(ftp, remote_dir, created):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dry-run", action="store_true", help="list files without connecting")
+    parser.add_argument("--coming-soon", action="store_true", help="upload only the pre-launch placeholder page")
     args = parser.parse_args()
 
-    files = collect_files()
+    files = collect_files(args.coming_soon)
+    missing = [str(local) for local, _ in files if not local.is_file()]
+    if missing:
+        sys.exit(f"Missing files: {', '.join(missing)}")
     if not files:
         sys.exit("Nothing to upload.")
 
