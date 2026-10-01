@@ -15,6 +15,22 @@ Handoff notes from planning done in Claude chat. Read this at session start for 
 - Migration steps: Cloudflare account → add domain → verify DNS scan caught existing A + MX records → swap nameservers at Fasthosts → wait for propagation → re-test admin@/support@ email delivery
 - Cloudflare SSL setting: choose **Flexible** (Fasthosts has no SSL certificate on the server, so "Full" would show a Cloudflare error). Turn on **Always Use HTTPS**. After the switch, check the site has the padlock and send test emails to support@ and admin@.
 
+## DNS before the Cloudflare move (rollback reference, read from ns1.livedns.co.uk on 1 Oct 2026)
+Nameservers: ns1/ns2/ns3.livedns.co.uk (Fasthosts). DNSSEC: off (no DS or DNSKEY records).
+
+| Type | Name | Value | Cloudflare proxy |
+|---|---|---|---|
+| A | thejaroflife.com | 77.68.64.40 | Proxied (orange) |
+| A | www | 77.68.64.40 | Proxied (orange) |
+| A | ftp | 213.171.193.5 | DNS only (grey) — FTP can't pass through the proxy |
+| MX | thejaroflife.com | 10 mailserver.livemail.co.uk | n/a |
+| TXT | thejaroflife.com | v=spf1 mx a include:_spf.livemail.co.uk ~all | n/a |
+| TXT | _dmarc | v=DMARC1; p=none; | n/a |
+
+None found: AAAA, wildcard, autodiscover, mail/webmail, DKIM at common selectors.
+The deploy script uses ftp.fasthosts.co.uk, not ftp.thejaroflife.com, so publishing doesn't depend on this domain's DNS.
+Rollback: set the nameservers at Fasthosts back to ns1/ns2/ns3.livedns.co.uk.
+
 ## Site content still needed (repo TODOs)
 Done: studio logo + header icon, Runic Raid key art (portrait), story comic, social share images, 4 work-in-progress screenshots, privacy policy draft, `app-ads.txt` placeholder, `robots.txt` + `sitemap.xml`. Full checklist in `README.md`.
 
