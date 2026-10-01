@@ -48,6 +48,7 @@ sftp and ssh were missed by my first inventory and found by Cloudflare's scan; b
 None found: AAAA, wildcard, autodiscover, mail/webmail, DKIM at common selectors.
 The deploy script uses ftp.fasthosts.co.uk, not ftp.thejaroflife.com, so publishing doesn't depend on this domain's DNS.
 Rollback: set the nameservers at Fasthosts back to ns1/ns2/ns3.livedns.co.uk.
+Cloudflare's assigned nameservers: **braden.ns.cloudflare.com** and **erin.ns.cloudflare.com**. Checked 1 Oct 2026 before the switch: both already served all 8 records above, identical to Fasthosts.
 
 ## Site content still needed (repo TODOs)
 Done: studio logo + header icon, Runic Raid key art (portrait), story comic, social share images, 4 work-in-progress screenshots, privacy policy draft, `app-ads.txt` placeholder, `robots.txt` + `sitemap.xml`. Full checklist in `README.md`.
