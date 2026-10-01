@@ -27,6 +27,8 @@ Still to do:
 - Launch details: platforms, release date, store URLs
 
 ## Website rollout — 3 stages (agreed)
+Deploys are automatic: merging a site change into `main` uploads it via GitHub Actions. Switch stage with the repo variable `DEPLOY_MODE` (`coming-soon` / `full`). The PC deploy (`python scripts/deploy.py`) is only a fallback.
+
 1. **DONE 1 Oct 2026 — coming-soon page live at thejaroflife.com.** `python scripts/deploy.py --coming-soon` — studio logo, vague teaser (no game name), support email, privacy policy. Run from Nicol's PC (the cloud session can't reach Fasthosts). Fine to do before or after the Cloudflare switch.
 2. **When Runic Raid is finalised and submitted to the Play Store: full site.** `python scripts/deploy.py` — homepage, Runic Raid page, full privacy policy. Before this: final screenshots, copy review, privacy policy check, AdMob ID in `app-ads.txt`.
 3. **Once it's live on the Play Store: final tweak.** Add the real Google Play link/badge, swap "Coming soon" for "Available now", set the release date, then redeploy. Then the site visibility plan below (Search Console, etc.).

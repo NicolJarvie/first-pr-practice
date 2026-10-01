@@ -43,19 +43,25 @@ EXAMPLE_VALUES = {"your-ftp-username", "your-ftp-password"}
 
 
 def load_env(path):
-    """Minimal .env parser: KEY=VALUE lines, # comments, optional quotes."""
-    if not path.exists():
-        sys.exit(f"No .env found at {path}. Copy .env.example to .env and fill it in.")
+    """Read FTP settings from .env (KEY=VALUE lines, # comments, optional quotes).
+
+    With no .env file (e.g. in the GitHub Actions deploy), the FTP_* settings
+    are read from environment variables instead.
+    """
     env = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        env[key.strip()] = value.strip().strip('"').strip("'")
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            env[key.strip()] = value.strip().strip('"').strip("'")
+    else:
+        env = {k: v for k, v in os.environ.items() if k.startswith("FTP_")}
     missing = [k for k in REQUIRED if not env.get(k)]
     if missing:
-        sys.exit(f".env is missing: {', '.join(missing)}")
+        sys.exit(f"Missing FTP settings: {', '.join(missing)}. "
+                 "Copy .env.example to .env and fill it in.")
     if EXAMPLE_VALUES & {env["FTP_USER"], env["FTP_PASSWORD"]}:
         sys.exit(".env still has the example values — add the real Fasthosts credentials first.")
     return env
