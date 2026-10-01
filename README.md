@@ -47,7 +47,8 @@ Everything else (README, scripts, `.env`, git files) stays on your machine.
 ## Automatic deploys (GitHub Actions)
 
 Merging a website change into `main` uploads it to Fasthosts automatically
-(`.github/workflows/deploy.yml`). No PC needed.
+(`.github/workflows/deploy.yml`). No PC needed. Claude only does this when
+Nicol says **"Publish live website"** and confirms (see `CLAUDE.md`).
 
 One-time setup in GitHub → repo **Settings → Secrets and variables → Actions**:
 - **Secrets** tab → `FTP_PASSWORD` = the Fasthosts FTP password
