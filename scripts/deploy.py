@@ -35,6 +35,8 @@ COMING_SOON = [
     ("app-ads.txt", "app-ads.txt"),
     ("assets/img/jar-of-life-logo.jpg", "assets/img/jar-of-life-logo.jpg"),
     ("assets/img/jar-of-life-icon.png", "assets/img/jar-of-life-icon.png"),
+    ("assets/img/jar-of-life-favicon-32.png", "assets/img/jar-of-life-favicon-32.png"),
+    ("assets/img/jar-of-life-favicon-192.png", "assets/img/jar-of-life-favicon-192.png"),
     ("assets/img/og-jar-of-life.jpg", "assets/img/og-jar-of-life.jpg"),
 ]
 
