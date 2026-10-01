@@ -10,6 +10,7 @@ step, no framework, no backend, no database.
 index.html              Homepage: hero, featured game, fair play, about, contact
 privacy.html            Privacy policy (needed for the Play Store listing)
 app-ads.txt             AdMob authorised-seller file (needs your publisher ID)
+robots.txt, sitemap.xml For search engines (submit the sitemap in Google Search Console)
 games/runic-raid.html    Runic Raid: Viking Saga game page
 css/styles.css          Shared styles for every page
 assets/img/             Images (logo, cover art, screenshots)
@@ -17,7 +18,7 @@ scripts/deploy.py       Uploads the site to Fasthosts over FTP(S)
 .env.example            Shape of the FTP credentials (copy to .env)
 ```
 
-Only `index.html`, `privacy.html`, `app-ads.txt`, `games/`, `css/` and `assets/` are uploaded when deploying.
+Only `index.html`, `privacy.html`, `app-ads.txt`, `robots.txt`, `sitemap.xml`, `games/`, `css/` and `assets/` are uploaded when deploying.
 Everything else (README, scripts, `.env`, git files) stays on your machine.
 
 ### Why styles live in `css/styles.css`
@@ -107,4 +108,5 @@ Placeholders are marked `PLACEHOLDER` (visible on the page) or
 - [ ] **Privacy policy:** check it against the final build (especially if
       analytics/Firebase are added), confirm the age rating, and set the date
 - [ ] **app-ads.txt:** add your AdMob publisher ID
+- [x] **robots.txt + sitemap.xml:** submit `https://thejaroflife.com/sitemap.xml` in Google Search Console once live
 - [ ] **Launch details:** Google Play URL and badge; add iOS if one is planned

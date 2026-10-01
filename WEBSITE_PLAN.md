@@ -15,11 +15,15 @@ Handoff notes from planning done in Claude chat. Read this at session start for 
 - Once Cloudflare is confirmed working: fill in repo's `.env` with Fasthosts FTP details, `deploy.py --dry-run`, then real deploy
 
 ## Site content still needed (repo TODOs)
-- Logo file: SVG or 512×512+ transparent PNG
-- Runic Raid cover art: landscape ~1600×1000 (currently have portrait poster art only)
-- Social share image: 1200×630
-- 4x Runic Raid phone screenshots
+Done: studio logo + header icon, Runic Raid key art (portrait), story comic, social share images, 4 work-in-progress screenshots, privacy policy draft, `app-ads.txt` placeholder, `robots.txt` + `sitemap.xml`. Full checklist in `README.md`.
+
+Still to do:
+- Runic Raid cover art: landscape ~1600×1000 (optional — the site uses the portrait key art for now)
+- Simpler purpose-made header/tab icon (optional — the current one is cropped from the studio logo)
+- Final Runic Raid phone screenshots to replace the 4 work-in-progress ones
 - Copy review: hero tagline, Runic Raid pitch, feature cards, fair play points, about text — all draft
+- Privacy policy: set the date, confirm the age rating, update if analytics (e.g. Firebase) are added
+- `app-ads.txt`: add the AdMob publisher ID
 - Launch details: platforms, release date, store URLs
 
 ## Idea: early "coming soon" placeholder
