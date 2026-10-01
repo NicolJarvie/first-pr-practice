@@ -8,7 +8,7 @@ Handoff notes from planning done in Claude chat. Read this at session start for 
 - Logo: made with Gemini, used in site repo already
 
 ## Hosting / DNS / SSL — current status
-- Fasthosts web hosting is live; the coming-soon page is deployed (stage 1). FTP: host `ftp.fasthosts.co.uk`, user `thejaroflife.com`, `FTP_REMOTE_DIR` blank (login lands in htdocs). Fasthosts' old placeholder `_index.htm` is still in htdocs — harmless, can be deleted
+- Fasthosts web hosting is live; the coming-soon page is deployed (stage 1). FTP: host `ftp.fasthosts.co.uk`, user `thejaroflife.com`, `FTP_REMOTE_DIR` blank (login lands in htdocs). Fasthosts' old placeholder `_index.htm` was deleted from htdocs on 1 Oct 2026 (now 404)
 - **In progress: migrating DNS + SSL to Cloudflare** (decided against Fasthosts' SSL add-on — free 1st year, ~£37.45/yr after; Cloudflare's is free permanently)
 - Cloudflare account registered under admin@thejaroflife.com (Hotmail as recovery)
 - Migration steps: Cloudflare account → add domain → verify DNS scan caught existing A + MX records → swap nameservers at Fasthosts → wait for propagation → re-test admin@/support@ email delivery
