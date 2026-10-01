@@ -38,10 +38,13 @@ Nameservers: ns1/ns2/ns3.livedns.co.uk (Fasthosts). DNSSEC: off (no DS or DNSKEY
 | A | thejaroflife.com | 77.68.64.40 | Proxied (orange) |
 | A | www | 77.68.64.40 | Proxied (orange) |
 | A | ftp | 213.171.193.5 | DNS only (grey) — FTP can't pass through the proxy |
+| A | sftp | 77.68.64.36 | DNS only (grey) — not web traffic |
+| A | ssh | 77.68.64.22 | DNS only (grey) — not web traffic |
 | MX | thejaroflife.com | 10 mailserver.livemail.co.uk | n/a |
 | TXT | thejaroflife.com | v=spf1 mx a include:_spf.livemail.co.uk ~all | n/a |
 | TXT | _dmarc | v=DMARC1; p=none; | n/a |
 
+sftp and ssh were missed by my first inventory and found by Cloudflare's scan; both confirmed on ns1.livedns.co.uk.
 None found: AAAA, wildcard, autodiscover, mail/webmail, DKIM at common selectors.
 The deploy script uses ftp.fasthosts.co.uk, not ftp.thejaroflife.com, so publishing doesn't depend on this domain's DNS.
 Rollback: set the nameservers at Fasthosts back to ns1/ns2/ns3.livedns.co.uk.
