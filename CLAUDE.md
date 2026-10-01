@@ -21,6 +21,12 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
 - Then, on the PC: `git pull` (to pick up changes made in other chats), run the
   deploy for the current stage, check it succeeded, and commit + push any
   local changes so GitHub keeps a backup copy.
+- When the live website has been updated and the check has confirmed it (every
+  uploaded file matches on the live server), display this line on its own:
+  **\*\*\* LIVE WEBSITE UPDATED \*\*\***
+  Show it only after a verified success, for any change to the live server
+  (a deploy or a file deleted there). If the upload or the check fails, do not
+  show it; report the failure instead.
 - A cloud/web session can't reach the PC or Fasthosts. It can only prepare
   changes and push them to GitHub; publishing happens in the PC session.
 
