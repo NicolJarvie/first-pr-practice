@@ -15,7 +15,9 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
   If Nicol says something like that, ask whether they mean "Publish live website".
 - When Nicol says "Publish live website", first reply with exactly:
   **"Are you sure? This will update the LIVE website."**
-  plus a one-line summary of what will change. Only continue after they answer yes.
+  followed by a short bullet summary of exactly what will change compared with
+  the version currently live (pages, text, images added/changed/removed).
+  Only continue after they answer yes.
 - Then, on the PC: `git pull` (to pick up changes made in other chats), run the
   deploy for the current stage, check it succeeded, and commit + push any
   local changes so GitHub keeps a backup copy.
