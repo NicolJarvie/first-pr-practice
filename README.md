@@ -44,20 +44,6 @@ Everything else (README, scripts, `.env`, git files) stays on your machine.
 
   Then open <http://localhost:8000>.
 
-## Automatic deploys (GitHub Actions)
-
-Merging a website change into `main` uploads it to Fasthosts automatically
-(`.github/workflows/deploy.yml`). No PC needed. Claude only does this when
-Nicol says **"Publish live website"** and confirms (see `CLAUDE.md`).
-
-One-time setup in GitHub → repo **Settings → Secrets and variables → Actions**:
-- **Secrets** tab → `FTP_PASSWORD` = the Fasthosts FTP password
-- **Variables** tab → `DEPLOY_MODE` = `coming-soon` now, `full` from stage 2
-  (unset = coming-soon)
-
-To redeploy by hand: **Actions** tab → **Deploy website** → **Run workflow**.
-The manual steps below still work from a PC as a fallback.
-
 ## Deploying to Fasthosts
 
 The deploy script uses Python's standard library only, so there's nothing to install.
