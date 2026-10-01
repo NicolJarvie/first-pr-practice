@@ -15,6 +15,7 @@ games/runic-raid.html    Runic Raid: Viking Saga game page
 css/styles.css          Shared styles for every page
 assets/img/             Images (logo, cover art, screenshots)
 scripts/deploy.py       Uploads the site to Fasthosts over FTP(S)
+coming-soon/            Pre-launch placeholder page (deploy with --coming-soon)
 .env.example            Shape of the FTP credentials (copy to .env)
 ```
 
@@ -74,6 +75,20 @@ The deploy script uses Python's standard library only, so there's nothing to ins
 > TLS, set `FTP_TLS=false` in `.env` and try again.
 
 `.env` is git-ignored and must never be committed.
+
+### Pre-launch placeholder (optional)
+
+To get the domain live and indexed before launch without showing the
+unfinished site, deploy only the "coming soon" page:
+
+```
+python scripts/deploy.py --coming-soon --dry-run
+python scripts/deploy.py --coming-soon
+```
+
+It shows the studio logo, a short teaser and the support email. It doesn't
+name the game. Running the normal `python scripts/deploy.py` later replaces it
+with the full site.
 
 ### Why Python for the deploy script
 

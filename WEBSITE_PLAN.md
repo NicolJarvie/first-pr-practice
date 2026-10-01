@@ -28,6 +28,7 @@ Still to do:
 
 ## Idea: early "coming soon" placeholder
 - Plan to deploy repo as-is (even with draft copy) once Cloudflare's sorted, to get the domain indexed early and test the full pipeline — before the "real" launch
+- Built: `coming-soon/index.html` — studio logo + vague teaser, no game name. Deploy with `python scripts/deploy.py --coming-soon`; the normal deploy replaces it at launch
 
 ## Games
 **Runic Raid: Viking Saga** — final name. Earlier working titles: "Rune Raiders" (dropped — naming conflict with an old Retro64 game), then "Rune Raid". Use "Runic Raid" everywhere.
