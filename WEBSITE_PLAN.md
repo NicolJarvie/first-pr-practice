@@ -12,7 +12,7 @@ Handoff notes from planning done in Claude chat. Read this at session start for 
 - **In progress: migrating DNS + SSL to Cloudflare** (decided against Fasthosts' SSL add-on — free 1st year, ~£37.45/yr after; Cloudflare's is free permanently)
 - Cloudflare account registered under admin@thejaroflife.com (Hotmail as recovery)
 - Migration steps: Cloudflare account → add domain → verify DNS scan caught existing A + MX records → swap nameservers at Fasthosts → wait for propagation → re-test admin@/support@ email delivery
-- Once Cloudflare is confirmed working: fill in repo's `.env` with Fasthosts FTP details, `deploy.py --dry-run`, then real deploy
+- Cloudflare SSL setting: choose **Flexible** (Fasthosts has no SSL certificate on the server, so "Full" would show a Cloudflare error). Turn on **Always Use HTTPS**. After the switch, check the site has the padlock and send test emails to support@ and admin@.
 
 ## Site content still needed (repo TODOs)
 Done: studio logo + header icon, Runic Raid key art (portrait), story comic, social share images, 4 work-in-progress screenshots, privacy policy draft, `app-ads.txt` placeholder, `robots.txt` + `sitemap.xml`. Full checklist in `README.md`.
@@ -32,6 +32,13 @@ Publishing is done from Nicol's PC (`C:\CLAUDE_STUFF\thejaroflife-site`, FTP det
 1. **DONE 1 Oct 2026 — coming-soon page live at thejaroflife.com.** `python scripts/deploy.py --coming-soon` — studio logo, vague teaser (no game name), support email, privacy policy. Run from Nicol's PC (the cloud session can't reach Fasthosts). Fine to do before or after the Cloudflare switch.
 2. **When Runic Raid is finalised and submitted to the Play Store: full site.** `python scripts/deploy.py` — homepage, Runic Raid page, full privacy policy. Before this: final screenshots, copy review, privacy policy check, AdMob ID in `app-ads.txt`.
 3. **Once it's live on the Play Store: final tweak.** Add the real Google Play link/badge, swap "Coming soon" for "Available now", set the release date, then redeploy. Then the site visibility plan below (Search Console, etc.).
+
+## Notes carried over from the setup chat (1 Oct 2026)
+- **Email in Outlook (phone + laptop):** account type IMAP; username = full email address; Fasthosts servers (confirm in the control panel): incoming `imap.livemail.co.uk` port 993 SSL/TLS, outgoing `smtp.livemail.co.uk` port 465 SSL (or 587 STARTTLS), sign-in required.
+- **Urgent-email monitoring:** plan in `docs/EMAIL_MONITORING.md` (daily, read-only, alerts only). Not set up yet — needs `support@` forwarded to Gmail/Outlook and that account connected to Claude.
+- **Housekeeping:** the game repo still has an unused branch `claude/rename-runic-raid` (closed PR #1, never merged) — delete it on GitHub when convenient. Fasthosts' old `_index.htm` in htdocs can be deleted.
+- **Repo visibility:** `NicolJarvie/first-pr-practice` is public. Optional: make it private (Settings → General → Danger Zone).
+- **Stage 2 inputs needed:** final phone screenshots, copy review, Play Console age rating, analytics yes/no, AdMob publisher ID, Play Store URL and release date.
 
 ## Games
 **Runic Raid: Viking Saga** — final name. Earlier working titles: "Rune Raiders" (dropped — naming conflict with an old Retro64 game), then "Rune Raid". Use "Runic Raid" everywhere.
