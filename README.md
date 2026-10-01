@@ -55,7 +55,8 @@ The deploy script uses Python's standard library only, so there's nothing to ins
    - macOS/Linux: `cp .env.example .env`
 2. Fill in `.env` with the FTP details from the Fasthosts control panel:
    `FTP_HOST`, `FTP_USER`, `FTP_PASSWORD`, `FTP_PORT` (usually `21`).
-   Check `FTP_REMOTE_DIR` too. Fasthosts Linux hosting normally uses `htdocs`.
+   For Fasthosts: host `ftp.fasthosts.co.uk`, username `thejaroflife.com`, and
+   leave `FTP_REMOTE_DIR` **blank**. The FTP login already lands inside `htdocs`.
 3. Preview what will be uploaded (no connection is made):
 
    ```
