@@ -15,6 +15,21 @@ Handoff notes from planning done in Claude chat. Read this at session start for 
 - Migration steps: Cloudflare account → add domain → verify DNS scan caught existing A + MX records → swap nameservers at Fasthosts → wait for propagation → re-test admin@/support@ email delivery
 - Cloudflare SSL setting: choose **Flexible** (Fasthosts has no SSL certificate on the server, so "Full" would show a Cloudflare error). Turn on **Always Use HTTPS**. After the switch, check the site has the padlock and send test emails to support@ and admin@.
 
+## Cloudflare plan: Free ($0), chosen 1 Oct 2026
+What the Free plan includes, as listed on Cloudflare's plan page that day:
+- Workers: 100K requests/day (small server-side scripts)
+- D1: 5 GB storage (database)
+- R2: 10 GB storage (file storage)
+- Pages: unlimited static sites (hosting)
+- Universal SSL certificate (the free HTTPS certificate this move is for)
+- Fast, easy-to-use DNS
+- Global CDN (copies of the site served from data centres near each visitor)
+- Rules: 70 Cloudflare Rules, 5 WAF (firewall) Rules
+- Support: community forum and documentation only, no tickets
+
+Next tier up was Pro at $20/month (ticket support, managed firewall rules, more rules). Not needed for this site.
+Note: Cloudflare Pages could host the static site for free as well. Not planned; the site stays on Fasthosts.
+
 ## DNS before the Cloudflare move (rollback reference, read from ns1.livedns.co.uk on 1 Oct 2026)
 Nameservers: ns1/ns2/ns3.livedns.co.uk (Fasthosts). DNSSEC: off (no DS or DNSKEY records).
 
