@@ -26,9 +26,10 @@ Still to do:
 - `app-ads.txt`: add the AdMob publisher ID
 - Launch details: platforms, release date, store URLs
 
-## Idea: early "coming soon" placeholder
-- Plan to deploy repo as-is (even with draft copy) once Cloudflare's sorted, to get the domain indexed early and test the full pipeline — before the "real" launch
-- Built: `coming-soon/index.html` — studio logo + vague teaser, no game name. Deploy with `python scripts/deploy.py --coming-soon`; the normal deploy replaces it at launch
+## Website rollout — 3 stages (agreed)
+1. **Now: coming-soon page only.** `python scripts/deploy.py --coming-soon` — studio logo, vague teaser (no game name), support email, privacy policy. Run from Nicol's PC (the cloud session can't reach Fasthosts). Fine to do before or after the Cloudflare switch.
+2. **When Runic Raid is finalised and submitted to the Play Store: full site.** `python scripts/deploy.py` — homepage, Runic Raid page, full privacy policy. Before this: final screenshots, copy review, privacy policy check, AdMob ID in `app-ads.txt`.
+3. **Once it's live on the Play Store: final tweak.** Add the real Google Play link/badge, swap "Coming soon" for "Available now", set the release date, then redeploy. Then the site visibility plan below (Search Console, etc.).
 
 ## Games
 **Runic Raid: Viking Saga** — final name. Earlier working titles: "Rune Raiders" (dropped — naming conflict with an old Retro64 game), then "Rune Raid". Use "Runic Raid" everywhere.
