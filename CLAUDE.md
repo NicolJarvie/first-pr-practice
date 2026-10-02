@@ -27,6 +27,19 @@ Read `WEBSITE_PLAN.md` first for context (stages, status, what's still needed).
   Show it only after a verified success, for any change to the live server
   (a deploy or a file deleted there). If the upload or the check fails, do not
   show it; report the failure instead.
+- **Cloudflare caching — Nicol never has to purge anything.** Cloudflare (and visitors'
+  browsers) keep copies of images, CSS and robots.txt for up to 4 hours; HTML pages are
+  never cached. So whenever a change replaces an image or the stylesheet, give the changed
+  file a NEW filename (e.g. `jar-of-life-logo-v2.jpg`), update every page that references
+  it, and add it to `COMING_SOON` in `scripts/deploy.py` when stage 1 needs it. Never
+  overwrite a cached file under its old name. Fixed-name files that can't be renamed
+  (`robots.txt`, `app-ads.txt`, `sitemap.xml`) may show the old version for up to 4 hours;
+  say so in the publish summary — no action for Nicol.
+- **How to verify a live update behind Cloudflare.** Compare each uploaded file with the
+  copy on the Fasthosts server directly (HTTP to 77.68.64.40 with `Host: thejaroflife.com`),
+  because Cloudflare rewrites the support@ email link (email obfuscation) and serves cached
+  copies of images. Then load the public https page and confirm the changed text is there.
+  Both must pass before showing the LIVE WEBSITE UPDATED line.
 - A cloud/web session can't reach the PC or Fasthosts. It can only prepare
   changes and push them to GitHub; publishing happens in the PC session.
 
